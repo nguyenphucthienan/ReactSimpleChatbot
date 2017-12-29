@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 
 import '../css/styles.css';
+import reducers from './reducers';
+
+const store = createStore(reducers, {});
 
 class App extends Component {
   render() {
@@ -12,6 +17,8 @@ class App extends Component {
 }
 
 ReactDOM.render(
-  <App />,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById('root')
 );
