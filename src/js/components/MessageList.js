@@ -9,7 +9,7 @@ class MessageList extends Component {
     const { userInfo, botInfo, messages } = this.props;
 
     return (
-      <ul>
+      <ul className="message-list col s12">
         {
           messages.map((message) => {
             if (message.isBot) {
@@ -18,6 +18,7 @@ class MessageList extends Component {
                   <BotMessage
                     username={botInfo.username}
                     content={message.content}
+                    sentAt={message.sentAt}
                   />
                 </li>
               );
@@ -27,6 +28,7 @@ class MessageList extends Component {
                   <UserMessage
                     username={userInfo.username}
                     content={message.content}
+                    sentAt={message.sentAt}
                   />
                 </li>
               );

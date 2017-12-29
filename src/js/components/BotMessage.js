@@ -2,15 +2,28 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class BotMessage extends Component {
+  constructor() {
+    super();
+    this.scrollToBottom = this.scrollToBottom.bind(this);
+  }
+
+  scrollToBottom(ref) {
+    this.refs[ref].scrollIntoView({ behavior: "smooth" });
+  }
+
+  componentDidMount() {
+    this.scrollToBottom(this.props.sentAt);
+  }
+
   render() {
     const { username, avatar } = this.props.botInfo;
 
     return (
-      <div className="col s10 offset-s1">
+      <div className="col s12" ref={this.props.sentAt}>
         <div className="card horizontal">
-          <div className="user-info card-image valign-wrapper">
+          <div className="user-info card-image">
             <img className="avatar" src={avatar} />
-            <p className="center-align">{username}</p>
+            <p className="username center-align">{username}</p>
           </div>
           <div className="card-stacked">
             <div className="card-content">
