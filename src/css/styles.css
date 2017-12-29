@@ -1,7 +1,14 @@
 body {
-  background: #fbf9fa;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 20px;
-  margin: 0;
-  padding: 30px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.user-info {
+  display: block;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  margin: 15px;
 }

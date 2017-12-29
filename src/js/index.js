@@ -1,20 +1,15 @@
+import 'materialize-css/dist/css/materialize.min.css';
+import '../css/styles.css';
+
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import '../css/styles.css';
+import App from './components/App';
 import reducers from './reducers';
 
 const store = createStore(reducers, {});
-
-class App extends Component {
-  render() {
-    return (
-      <div>Hi there!</div>
-    );
-  }
-}
 
 ReactDOM.render(
   <Provider store={store}>
