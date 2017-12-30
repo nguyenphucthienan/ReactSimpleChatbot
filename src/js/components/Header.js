@@ -9,7 +9,6 @@ class Header extends Component {
     ];
   }
 
-
   renderSideNav() {
     return [
       <li key="1"><a>lowercase</a></li>,
@@ -25,7 +24,7 @@ class Header extends Component {
           <nav>
             <div className="nav-wrapper blue darken-1">
               <a className="brand-logo">
-                <i className="material-icons">event_note</i>React Chat
+                <i className="material-icons">chat</i>React Chat
               </a>
 
               <a data-activates="nav-mobile" className="button-collapse pointer-cursor">

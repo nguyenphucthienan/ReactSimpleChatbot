@@ -20,7 +20,7 @@ class BotMessage extends Component {
 
     return (
       <div className="col s12" ref={this.props.messageId}>
-        <div className="card horizontal">
+        <div className="card horizontal z-depth-2">
           <div className="user-info card-image">
             <img className="avatar" src={avatar} alt="avatar" />
             <p className="username center-align">{username}</p>

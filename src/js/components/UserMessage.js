@@ -20,7 +20,7 @@ class UserMessage extends Component {
 
     return (
       <div className="col s12" ref={this.props.messageId}>
-        <div className="card horizontal">
+        <div className="card horizontal z-depth-2">
           <div className="card-stacked">
             <div className="card-content">
               <p>{this.props.content}</p>

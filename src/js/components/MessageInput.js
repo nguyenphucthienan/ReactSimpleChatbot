@@ -52,7 +52,7 @@ class MessageInput extends Component {
 
   render() {
     return (
-      <div className="row center-align">
+      <div className="message-input row center-align">
         <form className="col s12 m10 offset-m1 l8 offset-l2" onSubmit={this.handleTextSubmit}>
           <div className="input-field">
             <input className="materialize-textarea" value={this.state.value} onChange={this.handleTextChange} />
