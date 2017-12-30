@@ -1,7 +1,4 @@
-const USER_INFO = {
-  username: 'thienan',
-  avatar: 'https://pbs.twimg.com/profile_images/934407443597074432/YkIEGOSA.jpg'
-};
+import { USER_INFO } from '../constants';
 
 const INITIAL_STATE = USER_INFO;
 

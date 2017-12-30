@@ -3,23 +3,11 @@ import {
   CLEAR_MESSAGES
 } from '../actions/types';
 
-const INITIAL_STATE = [
-  {
-    messageId: `BOT${new Date().getTime()}`,
-    isBot: true,
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-  },
-  {
-    messageId: `USER${new Date().getTime()}`,
-    isBot: false,
-    content: 'Pellentesque at turpis pulvinar, bibendum dolor at, tempor magna. Fusce metus libero, elementum et purus non, aliquet lobortis tellus.'
-  },
-  {
-    messageId: `BOT${new Date().getTime() + 1}`,
-    isBot: true,
-    content: 'Duis consequat pretium libero sit amet rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque dapibus sagittis. Fusce pellentesque a libero at ultricies. In hac habitasse platea dictumst.'
-  }
-];
+const INITIAL_STATE = [{
+  messageId: `BOT${new Date().getTime()}`,
+  isBot: true,
+  content: 'hi, i am lowercase.'
+}];
 
 export default function (state = INITIAL_STATE, action) {
   switch (action.type) {

@@ -1,22 +1,12 @@
-const BOT_INFO = [
-  {
-    username: 'lowercase',
-    avatar: 'https://pbs.twimg.com/media/DI902LPVAAAwFdd.jpg'
-  },
-  {
-    username: 'UPPERCASE',
-    avatar: 'https://pbs.twimg.com/media/DI9034wVoAAh7iU.jpg'
-  },
-  {
-    username: 'CapitalizedCase',
-    avatar: 'https://i.pinimg.com/originals/1e/d9/2e/1ed92e0c37de9d02485b6d03835d10a2.jpg'
-  }
-];
+import { CHANGE_BOT } from '../actions/types';
+import { BOT_INFO } from '../constants';
 
 const INITIAL_STATE = BOT_INFO[0];
 
 export default function (state = INITIAL_STATE, action) {
   switch (action.type) {
+    case CHANGE_BOT:
+      return BOT_INFO[action.payload];
     default:
       return state;
   }

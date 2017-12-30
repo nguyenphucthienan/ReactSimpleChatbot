@@ -44,7 +44,7 @@ class MessageInput extends Component {
 
   renderClearButton() {
     return (
-      <a className="clear-button waves-effect waves-light red btn" onClick={this.handleClearButton} >
+      <a className="clear-button waves-effect waves-light red btn" onClick={this.handleClearButton}>
         <i className="material-icons left">remove</i>CLEAR
       </a>
     );

@@ -1,20 +1,39 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { changeBot, addMessage, clearMessages } from '../actions';
+import { BOT_INFO } from '../constants';
+import { convertString } from './utils';
 
 class Header extends Component {
+  constructor() {
+    super();
+    this.handleChangeBot = this.handleChangeBot.bind(this);
+  }
+
+  handleChangeBot(botIndex) {
+    this.props.clearMessages();
+    this.props.changeBot(botIndex);
+
+    const messageId = `BOT${new Date().getTime()}`;
+    const botUsername = BOT_INFO[botIndex].username;
+    const messageContent = convertString(botUsername, `Hi, I'm ${botUsername}.`);
+    this.props.addMessage(messageId, true, messageContent);
+  }
+
   renderHeader() {
-    return [
-      <li key="1"><a>lowercase</a></li>,
-      <li key="2"><a>UPPERCASE</a></li>,
-      <li key="3"><a>CapitalizedCase</a></li>,
-    ];
+    return BOT_INFO.map((bot, index) => (
+      <li key={bot.username}>
+        <a onClick={() => this.handleChangeBot(index)}>{bot.username}</a>
+      </li>
+    ));
   }
 
   renderSideNav() {
-    return [
-      <li key="1"><a>lowercase</a></li>,
-      <li key="2"><a>UPPERCASE</a></li>,
-      <li key="3"><a>CapitalizedCase</a></li>,
-    ];
+    return BOT_INFO.map((bot, index) => (
+      <li key={bot.username}>
+        <a onClick={() => this.handleChangeBot(index)}>{bot.username}</a>
+      </li>
+    ));
   }
 
   render() {
@@ -24,7 +43,7 @@ class Header extends Component {
           <nav>
             <div className="nav-wrapper blue darken-1">
               <a className="brand-logo">
-                <i className="material-icons">chat</i>React Chat
+                <i className="material-icons">chat</i>React Chatbot
               </a>
 
               <a data-activates="nav-mobile" className="button-collapse pointer-cursor">
@@ -46,4 +65,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default connect(null, { changeBot, addMessage, clearMessages })(Header);
