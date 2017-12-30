@@ -5,17 +5,19 @@ import {
 
 const INITIAL_STATE = [
   {
+    messageId: `BOT${new Date().getTime()}`,
     isBot: true,
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    sentAt: new Date().getTime()
-  }, {
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  },
+  {
+    messageId: `USER${new Date().getTime()}`,
     isBot: false,
-    content: 'Pellentesque at turpis pulvinar, bibendum dolor at, tempor magna. Fusce metus libero, elementum et purus non, aliquet lobortis tellus.',
-    sentAt: new Date().getTime() + 1
-  }, {
+    content: 'Pellentesque at turpis pulvinar, bibendum dolor at, tempor magna. Fusce metus libero, elementum et purus non, aliquet lobortis tellus.'
+  },
+  {
+    messageId: `BOT${new Date().getTime() + 1}`,
     isBot: true,
-    content: 'Duis consequat pretium libero sit amet rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque dapibus sagittis. Fusce pellentesque a libero at ultricies. In hac habitasse platea dictumst.',
-    sentAt: new Date().getTime() + 2
+    content: 'Duis consequat pretium libero sit amet rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque dapibus sagittis. Fusce pellentesque a libero at ultricies. In hac habitasse platea dictumst.'
   }
 ];
 
@@ -28,4 +30,4 @@ export default function (state = INITIAL_STATE, action) {
     default:
       return state;
   }
-};
+}

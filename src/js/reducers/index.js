@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import userInfoReducer from './userInfoReducer'
+import userInfoReducer from './userInfoReducer';
 import botInfoReducer from './botInfoReducer';
 import messagesReducer from './messagesReducer';
 

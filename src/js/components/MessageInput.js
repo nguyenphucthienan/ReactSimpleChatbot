@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addMessage, clearMessages } from '../actions';
+import { convertString } from './utils';
 
 class MessageInput extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = { value: '' };
 
     this.handleTextChange = this.handleTextChange.bind(this);
@@ -19,7 +20,17 @@ class MessageInput extends Component {
 
   handleTextSubmit(event) {
     if (this.state.value) {
-      this.props.addMessage(false, this.state.value);
+      // Add user message
+      let messageId = `USER${new Date().getTime()}`;
+      this.props.addMessage(messageId, false, this.state.value);
+
+      // Add bot message
+      const { botInfo } = this.props;
+      const botMessage = convertString(botInfo.username, this.state.value);
+      messageId = `BOT${new Date().getTime()}`;
+      this.props.addMessage(messageId, true, botMessage);
+
+      // Reset text input
       this.setState({ value: '' });
     }
 
@@ -33,7 +44,7 @@ class MessageInput extends Component {
 
   renderClearButton() {
     return (
-      <a className="clear-button waves-effect waves-light red btn" onClick={this.handleClearButton}>
+      <a className="clear-button waves-effect waves-light red btn" onClick={this.handleClearButton} >
         <i className="material-icons left">remove</i>CLEAR
       </a>
     );
@@ -44,7 +55,7 @@ class MessageInput extends Component {
       <div className="row center-align">
         <form className="col s12" onSubmit={this.handleTextSubmit}>
           <div className="input-field">
-            <input className="materialize-textarea" value={this.state.value} onChange={this.handleTextChange}></input>
+            <input className="materialize-textarea" value={this.state.value} onChange={this.handleTextChange} />
           </div>
           <button type="submit" className="waves-effect waves-light blue btn"><i className="material-icons left">send</i>SEND</button>
           {this.renderClearButton()}
@@ -54,4 +65,8 @@ class MessageInput extends Component {
   }
 }
 
-export default connect(null, { addMessage, clearMessages })(MessageInput);
+function mapStateToProps({ botInfo }) {
+  return { botInfo };
+}
+
+export default connect(mapStateToProps, { addMessage, clearMessages })(MessageInput);

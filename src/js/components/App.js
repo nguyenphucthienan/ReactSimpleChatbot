@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import MessageInput from './MessageInput';
-import UserMessage from './UserMessage';
-import BotMessage from './BotMessage';
 import MessageList from './MessageList';
 
 class App extends Component {

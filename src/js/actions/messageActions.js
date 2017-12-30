@@ -3,19 +3,15 @@ import {
   CLEAR_MESSAGES
 } from './types';
 
-export const addMessage = (isBot, content) => {
-  return {
-    type: ADD_MESSAGE,
-    payload: {
-      isBot,
-      content,
-      sentAt: new Date()
-    }
-  };
-};
+export const addMessage = (messageId, isBot, content) => ({
+  type: ADD_MESSAGE,
+  payload: {
+    messageId,
+    isBot,
+    content,
+  }
+});
 
-export const clearMessages = () => {
-  return {
-    type: CLEAR_MESSAGES
-  };
-};
+export const clearMessages = () => ({
+  type: CLEAR_MESSAGES
+});

@@ -8,7 +8,7 @@ const BOT_INFO = [
     avatar: 'https://pbs.twimg.com/media/DI9034wVoAAh7iU.jpg'
   },
   {
-    username: 'snake_case',
+    username: 'CapitalizedCase',
     avatar: 'https://i.pinimg.com/originals/1e/d9/2e/1ed92e0c37de9d02485b6d03835d10a2.jpg'
   }
 ];
@@ -20,4 +20,4 @@ export default function (state = INITIAL_STATE, action) {
     default:
       return state;
   }
-};
+}

@@ -7,32 +7,32 @@ import BotMessage from './BotMessage';
 class MessageList extends Component {
   render() {
     const { userInfo, botInfo, messages } = this.props;
-
+    console.log(messages);
     return (
       <ul className="message-list col s12">
         {
           messages.map((message) => {
             if (message.isBot) {
               return (
-                <li key={message.sentAt}>
+                <li key={message.messageId}>
                   <BotMessage
                     username={botInfo.username}
                     content={message.content}
-                    sentAt={message.sentAt}
-                  />
-                </li>
-              );
-            } else {
-              return (
-                <li key={message.sentAt}>
-                  <UserMessage
-                    username={userInfo.username}
-                    content={message.content}
-                    sentAt={message.sentAt}
+                    messageId={message.messageId}
                   />
                 </li>
               );
             }
+
+            return (
+              <li key={message.messageId}>
+                <UserMessage
+                  username={userInfo.username}
+                  content={message.content}
+                  messageId={message.messageId}
+                />
+              </li>
+            );
           })
         }
       </ul>
