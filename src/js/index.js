@@ -2,7 +2,7 @@ import 'materialize-css/dist/css/materialize.min.css';
 import '../css/styles.css';
 import './scripts/materialize-scripts';
 
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
