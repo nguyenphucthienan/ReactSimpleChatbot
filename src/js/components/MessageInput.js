@@ -53,11 +53,11 @@ class MessageInput extends Component {
   render() {
     return (
       <div className="row center-align">
-        <form className="col s12" onSubmit={this.handleTextSubmit}>
+        <form className="col s12 m10 offset-m1 l8 offset-l2" onSubmit={this.handleTextSubmit}>
           <div className="input-field">
             <input className="materialize-textarea" value={this.state.value} onChange={this.handleTextChange} />
           </div>
-          <button type="submit" className="waves-effect waves-light blue btn"><i className="material-icons left">send</i>SEND</button>
+          <button type="submit" className="waves-effect waves-light blue darken-1 btn"><i className="material-icons left">send</i>SEND</button>
           {this.renderClearButton()}
         </form>
       </div>

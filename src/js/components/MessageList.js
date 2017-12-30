@@ -7,9 +7,9 @@ import BotMessage from './BotMessage';
 class MessageList extends Component {
   render() {
     const { userInfo, botInfo, messages } = this.props;
-    console.log(messages);
+
     return (
-      <ul className="message-list col s12">
+      <ul className="message-list col s12 m10 offset-m1 l8 offset-l2">
         {
           messages.map((message) => {
             if (message.isBot) {
