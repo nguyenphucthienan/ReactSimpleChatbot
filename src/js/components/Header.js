@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { changeBot, addMessage, clearMessages } from '../actions';
+import { changeBot, addMessage, clearMessages, loadMessagesFromStorage } from '../actions';
 import { BOT_INFO } from '../constants';
 import { convertString } from './utils';
 
@@ -10,14 +10,14 @@ class Header extends Component {
     this.handleChangeBot = this.handleChangeBot.bind(this);
   }
 
-  handleChangeBot(botIndex) {
-    this.props.clearMessages();
+  async handleChangeBot(botIndex) {
     this.props.changeBot(botIndex);
+    await this.props.loadMessagesFromStorage(botIndex);
 
     const messageId = `BOT${new Date().getTime()}`;
     const botUsername = BOT_INFO[botIndex].username;
     const messageContent = convertString(botUsername, `Hi, I'm ${botUsername}.`);
-    this.props.addMessage(messageId, true, messageContent);
+    this.props.addMessage(messageId, true, botIndex, messageContent);
   }
 
   renderHeader() {
@@ -65,4 +65,9 @@ class Header extends Component {
   }
 }
 
-export default connect(null, { changeBot, addMessage, clearMessages })(Header);
+export default connect(null, {
+  changeBot,
+  addMessage,
+  clearMessages,
+  loadMessagesFromStorage
+})(Header);

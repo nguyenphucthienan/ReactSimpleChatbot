@@ -18,28 +18,31 @@ class MessageInput extends Component {
     this.setState({ value: event.target.value });
   }
 
-  handleTextSubmit(event) {
+  async handleTextSubmit(event) {
+    event.preventDefault();
+
     if (this.state.value) {
+      const { botInfo } = this.props;
+
       // Add user message
       let messageId = `USER${new Date().getTime()}`;
-      this.props.addMessage(messageId, false, this.state.value);
+      await this.props.addMessage(messageId, false, botInfo.index, this.state.value);
 
       // Add bot message
-      const { botInfo } = this.props;
       const botMessage = convertString(botInfo.username, this.state.value);
       messageId = `BOT${new Date().getTime()}`;
-      this.props.addMessage(messageId, true, botMessage);
+      await this.props.addMessage(messageId, true, botInfo.index, botMessage);
 
       // Reset text input
       this.setState({ value: '' });
     }
-
-    event.preventDefault();
   }
 
-  handleClearButton() {
-    this.props.clearMessages();
+  handleClearButton(event) {
     event.preventDefault();
+
+    const { botInfo } = this.props;
+    this.props.clearMessages(botInfo.index);
   }
 
   renderClearButton() {
