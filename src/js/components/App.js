@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import BotInfo from './BotInfo';
+import BotList from './BotList';
 import MessageList from './MessageList';
 import MessageInput from './MessageInput';
 import Footer from './Footer';
@@ -11,14 +12,15 @@ class App extends Component {
       <div className="flex-wrapper">
         <Header />
         <main>
-          <div className="row center-align">
-            <BotInfo />
-          </div>
           <div className="row">
-            <MessageList />
-          </div>
-          <div className="row">
-            <MessageInput />
+            <div className="col s4">
+              <BotInfo />
+              <BotList />
+            </div>
+            <div className="col s8">
+              <MessageList />
+              <MessageInput />
+            </div>
           </div>
         </main>
         <Footer />

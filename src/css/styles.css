@@ -22,12 +22,14 @@ main {
 
 .message-list {
   margin: 0 auto;
-  height: 600px;
+  height: 650px;
   overflow-x: auto;
 }
 
 .card {
   border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 .message-input {
@@ -68,4 +70,10 @@ main {
 
 .clear-button {
   margin-left: 15px;
+}
+
+.bot-card-avatar {
+  width: 30px;
+  height: 30px;
+  margin-left: 20px;
 }

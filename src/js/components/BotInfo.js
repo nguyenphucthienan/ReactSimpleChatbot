@@ -6,7 +6,7 @@ class BotInfo extends Component {
     const { username: botUsername } = this.props.botInfo;
 
     return (
-      <h5 className="blue-text text-darken-1">
+      <h5 className="blue-text text-darken-1 center-align">
         <i className="material-icons">face</i>{` ${botUsername}`}
       </h5>
     );
