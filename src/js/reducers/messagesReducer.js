@@ -4,7 +4,13 @@ import {
   CLEAR_MESSAGES
 } from '../actions/types';
 
-const INITIAL_STATE = JSON.parse(localStorage.getItem('REACTCHATBOT0')) || [{
+// const INITIAL_STATE = JSON.parse(localStorage.getItem('REACTCHATBOT0')) || [{
+//   messageId: `BOT${new Date().getTime()}`,
+//   isBot: true,
+//   content: 'hi, i am lowercase.'
+// }];
+
+const INITIAL_STATE = [{
   messageId: `BOT${new Date().getTime()}`,
   isBot: true,
   content: 'hi, i am lowercase.'
