@@ -14,6 +14,10 @@ class MessageInput extends Component {
     this.renderClearButton = this.renderClearButton.bind(this);
   }
 
+  componentDidMount() {
+    this.refs.messageInput.focus();
+  }
+
   handleTextChange(event) {
     this.setState({ value: event.target.value });
   }
@@ -47,7 +51,10 @@ class MessageInput extends Component {
 
   renderClearButton() {
     return (
-      <a className="clear-button waves-effect waves-light red btn" onClick={this.handleClearButton}>
+      <a
+        className="clear-button waves-effect waves-light red btn"
+        onClick={this.handleClearButton}
+      >
         <i className="material-icons left">remove</i>CLEAR
       </a>
     );
@@ -56,9 +63,15 @@ class MessageInput extends Component {
   render() {
     return (
       <div className="message-input row center-align">
-        <form className="col s12 m10 offset-m1 l8 offset-l2" onSubmit={this.handleTextSubmit}>
+        <form onSubmit={this.handleTextSubmit}>
           <div className="input-field">
-            <input className="materialize-textarea" value={this.state.value} onChange={this.handleTextChange} />
+            <input
+              className="materialize-textarea"
+              value={this.state.value}
+              onChange={this.handleTextChange}
+              placeholder="Type your message"
+              ref="messageInput"
+            />
           </div>
           <button type="submit" className="waves-effect waves-light blue darken-1 btn"><i className="material-icons left">send</i>SEND</button>
           {this.renderClearButton()}

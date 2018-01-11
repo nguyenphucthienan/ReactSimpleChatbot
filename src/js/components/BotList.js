@@ -6,12 +6,16 @@ import BotCard from './BotCard';
 class BotList extends Component {
   render() {
     return (
-      BOT_INFO.map(botInfo => (
-        <BotCard
-          key={botInfo.username}
-          botInfo={botInfo}
-        />
-      ))
+      <div>
+        {
+          BOT_INFO.map(botInfo => (
+            <BotCard
+              key={botInfo.username}
+              botInfo={botInfo}
+            />
+          ))
+        }
+      </div>
     );
   }
 }

@@ -13,11 +13,11 @@ class App extends Component {
         <Header />
         <main>
           <div className="row">
-            <div className="col s4">
+            <div className="col s4 m4 l3 offset-l1">
               <BotInfo />
               <BotList />
             </div>
-            <div className="col s8">
+            <div className="col s8 m8 l6 offset-l1">
               <MessageList />
               <MessageInput />
             </div>

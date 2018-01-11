@@ -7,26 +7,26 @@ export const BOT_INFO = [
   {
     index: 0,
     username: 'lowercase',
-    avatar: 'http://tontonfriends.com/wp-content/uploads/2017/10/21371327_2067801156578717_8559818807026954373_n.png'
+    avatar: 'https://i.pinimg.com/originals/01/96/5a/01965a0bbdd3f25fda4e1ad5d09f3f90.jpg'
   },
   {
     index: 1,
     username: 'UPPERCASE',
-    avatar: '  http://tontonfriends.com/wp-content/uploads/2017/10/21369318_2067801086578724_8914208301632467438_n.png'
+    avatar: 'http://fcbk.su/_data/stickers/193082274544043/193082274544043_03.png'
   },
   {
     index: 2,
     username: 'TitleCase',
-    avatar: 'http://tontonfriends.com/wp-content/uploads/2017/10/21232139_2067801133245386_1640417868922701307_n.png'
+    avatar: 'http://fcbk.su/_data/stickers/193082274544043/193082274544043_08.png'
   },
   {
     index: 3,
     username: 'AlTeRnAtEcAsE',
-    avatar: 'http://tontonfriends.com/wp-content/uploads/2017/10/21232093_2067800783245421_6295075581671617651_n.png'
+    avatar: 'http://fcbk.su/_data/stickers/193082274544043/193082274544043_14.png'
   },
   {
     index: 4,
     username: 'SwApcAsE',
-    avatar: 'https://i.pinimg.com/originals/66/b8/69/66b8697a5447d1d4776f9621065b47a5.jpg'
+    avatar: 'http://fcbk.su/_data/stickers/193082274544043/193082274544043_15.png'
   }
 ];

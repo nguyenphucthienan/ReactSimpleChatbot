@@ -9,7 +9,7 @@ class MessageList extends Component {
     const { userInfo, botInfo, messages } = this.props;
 
     return (
-      <ul className="message-list col s12 m10 offset-m1 l8 offset-l2">
+      <ul className="message-list">
         {
           messages.map((message) => {
             if (message.isBot) {
