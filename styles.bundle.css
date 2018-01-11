@@ -44,7 +44,7 @@ main {
 
 .message-list {
   margin: 0 auto;
-  height: 680px;
+  height: 70vh;
   overflow-x: auto;
 }
 
