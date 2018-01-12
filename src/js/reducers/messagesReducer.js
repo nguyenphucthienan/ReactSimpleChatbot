@@ -7,7 +7,7 @@ import {
 const INITIAL_STATE = JSON.parse(localStorage.getItem('REACTCHATBOT0')) || [{
   messageId: `BOT${new Date().getTime()}`,
   isBot: true,
-  content: 'hi, i am lowercase.'
+  content: 'hi, i\'m lowercase.'
 }];
 
 // const INITIAL_STATE = [{

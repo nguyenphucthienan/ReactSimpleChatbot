@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class BotMessage extends Component {
-  constructor() {
-    super();
-    this.scrollToBottom = this.scrollToBottom.bind(this);
-  }
+  // constructor() {
+  //   super();
+  //   this.scrollToBottom = this.scrollToBottom.bind(this);
+  // }
 
-  scrollToBottom(ref) {
-    this.refs[ref].scrollIntoView({ behavior: 'smooth' });
-  }
+  // scrollToBottom(messageId) {
+  //   this.refs[messageId].scrollIntoView({ behavior: 'smooth' });
+  // }
 
-  componentDidMount() {
-    this.scrollToBottom(this.props.messageId);
-  }
+  // componentDidMount() {
+  //   this.scrollToBottom(this.props.messageId);
+  // }
 
   render() {
     const { username, avatar } = this.props.botInfo;

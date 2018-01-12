@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BOT_INFO } from '../constants';
 
 class Header extends Component {
-  renderListBotInfo() {
+  renderBotInfoList() {
     return BOT_INFO.map(bot => (
       <li key={bot.username}>
         <a>{bot.username}</a>
@@ -25,11 +25,11 @@ class Header extends Component {
               </a>
 
               <ul className="right hide-on-med-and-down">
-                {this.renderListBotInfo()}
+                {this.renderBotInfoList()}
               </ul>
 
               <ul className="side-nav" id="nav-mobile">
-                {this.renderListBotInfo()}
+                {this.renderBotInfoList()}
               </ul>
             </div>
           </nav >
