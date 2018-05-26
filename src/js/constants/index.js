@@ -1,6 +1,6 @@
 export const USER_INFO = {
   username: 'thienan',
-  avatar: 'https://pbs.twimg.com/profile_images/934407443597074432/YkIEGOSA.jpg'
+  avatar: 'http://fcbk.su/_data/stickers/tonton_friends/tonton_friends_08.png'
 };
 
 export const BOT_INFO = [
@@ -12,21 +12,21 @@ export const BOT_INFO = [
   {
     index: 1,
     username: 'UPPERCASE',
-    avatar: 'http://fcbk.su/_data/stickers/193082274544043/193082274544043_03.png'
+    avatar: 'http://fcbk.su/_data/stickers/tonton_friends/tonton_friends_03.png'
   },
   {
     index: 2,
     username: 'TitleCase',
-    avatar: 'http://fcbk.su/_data/stickers/193082274544043/193082274544043_08.png'
+    avatar: 'http://fcbk.su/_data/stickers/tonton_friends_2/tonton_friends_2_00.png'
   },
   {
     index: 3,
     username: 'AlTeRnAtEcAsE',
-    avatar: 'http://fcbk.su/_data/stickers/193082274544043/193082274544043_14.png'
+    avatar: 'http://fcbk.su/_data/stickers/tonton_friends/tonton_friends_14.png'
   },
   {
     index: 4,
     username: 'SwApcAsE',
-    avatar: 'http://fcbk.su/_data/stickers/193082274544043/193082274544043_15.png'
+    avatar: 'http://fcbk.su/_data/stickers/tonton_friends/tonton_friends_15.png'
   }
 ];
